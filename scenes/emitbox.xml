@@ -60,15 +60,22 @@
    
     <!-- Light -->
 
-    <shape type="obj" id="light">
-        <string name="filename" value="meshes/cbox_luminaire.obj"/>
+<emitter type="spot">
+    <transform name="to_world">
+            <lookat origin="0.99, 0., 0." target="0., 0., 0." up="0, 0, 1"/>
+    </transform>
+    <rgb name="intensity" value="10.0"/>
+</emitter>
+
+    <shape type="sphere" id="smallsphere">
+        <!-- emitter type="area">
+            <rgb name="radiance" value="180.387, 130.9873, 600.75357"/>
+        </emitter -->
         <transform name="to_world">
-            <translate x="0" y="-0.01" z="0"/>
+            <scale value="0.02"/>
+            <translate x="0." y="0." z="0."/>
         </transform>
-        <ref id="white"/>
-        <emitter type="area">
-            <rgb name="radiance" value="18.387, 13.9873, 6.75357"/>
-        </emitter>
+        <ref id="green"/>
     </shape>
 
     <!-- Shapes -->
@@ -85,7 +92,7 @@
 
     <shape type="obj" id="back">
         <string name="filename" value="meshes/cbox_back.obj"/>
-        <ref id="white"/>
+        <ref id="gray"/>
     </shape>
 
     <shape type="obj" id="greenwall">
@@ -95,7 +102,7 @@
 
     <shape type="obj" id="redwall">
         <string name="filename" value="meshes/cbox_redwall.obj"/>
-        <ref id="mirror"/>
+        <ref id="red"/>
     </shape>
 
     <shape type="cube">
