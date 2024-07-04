@@ -48,7 +48,7 @@
     </bsdf>
 
     <bsdf type="diffuse" id="red">
-        <rgb name="reflectance" value="0.570068, 0.0430135, 0.0443706"/>
+        <rgb name="reflectance" value="0.70068, 0.0430135, 0.0443706"/>
     </bsdf>
 
     <bsdf type="conductor" id="mirror">
@@ -60,12 +60,13 @@
    
     <!-- Light -->
 
-<emitter type="spot">
-    <transform name="to_world">
-            <lookat origin="0.99, 0.0, -0.7" target="0., 0., 0."/>
-    </transform>
-    <rgb name="intensity" value="10.0"/>
-</emitter>
+    <emitter type="spot">
+        <transform name="to_world">
+            <lookat origin="0., 0., 0.99" target="0., 0., 0." />
+        </transform>
+        <rgb name="intensity" value="100.0"/>
+        <!-- rgb name="cutoff_angle" value="10.00"/ -->
+    </emitter>
 
     <shape type="sphere" id="smallsphere">
         <!-- emitter type="area">
@@ -73,53 +74,36 @@
         </emitter -->
         <transform name="to_world">
             <scale value="0.2"/>
-            <translate x="0." y="0." z="-0.4"/>
+            <translate x="0.3" y="0.6" z="-0.5"/>
         </transform>
-        <ref id="green"/>
+        <ref id="red"/>
     </shape>
 
     <!-- Shapes -->
 
     <shape type="obj" id="floor">
         <string name="filename" value="meshes/cbox_floor.obj"/>
-        <ref id="white"/>
+        <ref id="mirror"/>
     </shape>
 
     <shape type="obj" id="ceiling">
         <string name="filename" value="meshes/cbox_ceiling.obj"/>
-        <ref id="white"/>
+        <ref id="mirror"/>
     </shape>
 
     <shape type="obj" id="back">
         <string name="filename" value="meshes/cbox_back.obj"/>
-        <ref id="gray"/>
+        <ref id="mirror"/>
     </shape>
 
     <shape type="obj" id="greenwall">
         <string name="filename" value="meshes/cbox_greenwall.obj"/>
-        <ref id="green"/>
+        <ref id="mirror"/>
     </shape>
 
     <shape type="obj" id="redwall">
         <string name="filename" value="meshes/cbox_redwall.obj"/>
-        <ref id="red"/>
+        <ref id="mirror"/>
     </shape>
 
-    <!-- shape type="cube">
-        <transform name="to_world">
-            <scale x="0.1" y="0.1" z="0.1"/>
-            <rotate x="1" angle="60"/>
-            <rotate y="1" angle="60"/>
-            <translate x="0.2" y="0.1" z="0.2"/>
-        </transform>
-        <ref id="red"/>
-    </shape -->
-
-    <shape type="sphere" id="glasssphere">
-        <transform name="to_world">
-            <scale value="0.25"/>
-            <translate x="0.5" y="-0.75" z="-0.2"/>
-        </transform>
-        <ref id="glass"/>
-    </shape>
 </scene>
