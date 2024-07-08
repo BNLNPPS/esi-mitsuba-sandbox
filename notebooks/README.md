@@ -25,5 +25,6 @@ be produced by external applications.
 
 ## Light sources (emitters)
 
-In the Geant4/Cherenkov paper the light source was formed based on the _spot_ type of emitter in Mitsuba.
+In the [Geant4/Cherenkov paper](https://arxiv.org/pdf/2309.12496) the light source was formed based on a custom model and
+not the _spot_ type of emitter in Mitsuba.
 
