@@ -71,9 +71,9 @@
     <shape type="sphere" id="smallsphere">
         <transform name="to_world">
             <scale value="0.4"/>
-            <translate x="0" y="0" z="-0.5"/>
+            <translate x="0" y="0" z="-1.3"/>
         </transform>
-        <ref id="white"/>
+        <ref id="red"/>
     </shape>
   
 
