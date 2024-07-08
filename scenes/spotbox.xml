@@ -68,12 +68,19 @@
         <!-- rgb name="cutoff_angle" value="10.00"/ -->
     </emitter>
 
+    <emitter type="spot">
+        <transform name="to_world">
+            <lookat origin="0.99, 0.0, -0.1" target="0., 0., -1.3"/>
+        </transform>
+        <rgb name="intensity" value="10.0"/>
+    </emitter>
+
     <shape type="sphere" id="smallsphere">
         <transform name="to_world">
             <scale value="0.4"/>
-            <translate x="0" y="0" z="-1.3"/>
+            <translate x="0" y="0" z="-1.0"/>
         </transform>
-        <ref id="red"/>
+        <ref id="white"/>
     </shape>
   
 
@@ -81,7 +88,7 @@
 
     <shape type="obj" id="floor">
         <string name="filename" value="meshes/cbox_floor.obj"/>
-        <ref id="mirror"/>
+        <ref id="gray"/>
     </shape>
 
     <shape type="obj" id="ceiling">
