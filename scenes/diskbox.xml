@@ -3,7 +3,8 @@
     <default name="res" value="256"/>
     <default name="max_depth" value="6"/>
     <default name="integrator" value="path"/>
-
+    <default name="shift" value="-0.3"/>
+    <default name="angle" value="-50.0"/>
     <integrator type='$integrator'>
         <integer name="max_depth" value="$max_depth"/>
     </integrator>
@@ -17,7 +18,7 @@
         <float name="focus_distance" value="1000"/>
         <float name="fov" value="39.3077"/>
         <transform name="to_world">
-            <lookat origin="0,  0,  4"
+            <lookat origin="0,  0,  4.0"
                     target="0,  0,  0"
                     up    ="0,  1,  0"/>
         </transform>
@@ -65,12 +66,12 @@
    
     <!-- Light -->
 
-    <emitter type="spot" id="xxx">
+    <emitter type="spot" id="spot">
         <transform name="to_world">
-            <lookat origin="0., 0., 0.99" target="0., 0., 0." />
+            <lookat origin="0., 0., 0.99" target="$shift, 0., 0." />
         </transform>
         <rgb name="intensity" value="9.0, 10.0, 11.0"/>
-        <float name="cutoff_angle" value="5"/>
+        <float name="cutoff_angle" value="10"/>
         <float name="beam_width" value="1"/>
         <!-- rgb name="cutoff_angle" value="0.0 0.0 0.0"/ -->
     </emitter>
@@ -87,7 +88,7 @@
     <shape type="obj" id="light">
         <string name="filename" value="meshes/cbox_luminaire.obj"/>
         <transform name="to_world">
-            <translate x="0" y="-0.01" z="0"/>
+            <translate x="0.0" y="0.0" z="0"/>
         </transform>
         <ref id="white"/>
         <emitter type="area">
@@ -97,10 +98,10 @@
 
     <shape type="disk" id="disk">
         <transform name="to_world">
-            <scale value="0.4"/>
+            <scale value="0.7"/>
             <rotate x="1" angle="0"/>
-            <rotate y="1" angle="-70"/>
-            <translate x="0.0" y="0.0" z="-0.5"/>
+            <rotate y="1" angle="$angle"/>
+            <translate x="$shift" y="0.0" z="-0.3"/>
         </transform>
         <ref id="bright"/>
     </shape>
