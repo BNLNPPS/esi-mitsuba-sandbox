@@ -70,6 +70,8 @@
             <lookat origin="0., 0., 0.99" target="0., 0., 0." />
         </transform>
         <rgb name="intensity" value="9.0, 10.0, 11.0"/>
+        <float name="cutoff_angle" value="5"/>
+        <float name="beam_width" value="1"/>
         <!-- rgb name="cutoff_angle" value="0.0 0.0 0.0"/ -->
     </emitter>
 
@@ -82,12 +84,23 @@
 
     <!-- Shapes -->
 
+    <shape type="obj" id="light">
+        <string name="filename" value="meshes/cbox_luminaire.obj"/>
+        <transform name="to_world">
+            <translate x="0" y="-0.01" z="0"/>
+        </transform>
+        <ref id="white"/>
+        <emitter type="area">
+            <rgb name="radiance" value="2.387, 1.9873, 1.7"/>
+        </emitter>
+    </shape>
+
     <shape type="disk" id="disk">
         <transform name="to_world">
             <scale value="0.4"/>
             <rotate x="1" angle="0"/>
-            <rotate y="1" angle="60"/>
-            <translate x="0.3" y="0.3" z="-0.5"/>
+            <rotate y="1" angle="-70"/>
+            <translate x="0.0" y="0.0" z="-0.5"/>
         </transform>
         <ref id="bright"/>
     </shape>
@@ -114,7 +127,7 @@
 
     <shape type="obj" id="redwall">
         <string name="filename" value="meshes/cbox_redwall.obj"/>
-        <ref id="mirror"/>
+        <ref id="red"/>
     </shape>
 
 </scene>
