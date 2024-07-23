@@ -18,7 +18,7 @@
         <float name="focus_distance" value="1000"/>
         <float name="fov" value="39.3077"/>
         <transform name="to_world">
-            <lookat origin="0,  0,  5.0"
+            <lookat origin="0,  0,  4.0"
                     target="0,  0,  0"
                     up    ="0,  1,  0"/>
         </transform>
@@ -57,6 +57,15 @@
         <rgb name="reflectance" value="0.70068, 0.0430135, 0.0443706"/>
     </bsdf>
 
+    <bsdf type="diffuse" id="purple">
+        <rgb name="reflectance" value="0.70068, 0.0430135, 0.7443706"/>
+    </bsdf>
+
+    <bsdf type="diffuse" id="black">
+        <rgb name="reflectance" value="0.07, 0.04, 0.07"/>
+    </bsdf>
+
+
     <bsdf type="conductor" id="mirror">
         <string name="material" value="Cr"/>
     </bsdf>
@@ -68,9 +77,9 @@
 
     <emitter type="spot" id="spot">
         <transform name="to_world">
-            <lookat origin="0., 0., 0.99" target="$shift, 0., 0." />
+            <lookat origin="0., 0., 0.99" target="0., 0., -0.5" />
         </transform>
-        <rgb name="intensity" value="9.0, 10.0, 11.0"/>
+        <rgb name="intensity" value="19.0, 10.0, 11.0"/>
         <float name="cutoff_angle" value="10"/>
         <float name="beam_width" value="1"/>
         <!-- rgb name="cutoff_angle" value="0.0 0.0 0.0"/ -->
@@ -88,7 +97,7 @@
     <shape type="obj" id="light">
         <string name="filename" value="meshes/cbox_luminaire.obj"/>
         <transform name="to_world">
-            <translate x="0.0" y="-0.1" z="0"/>
+            <translate x="0.0" y="-0.01" z="0"/>
         </transform>
         <ref id="white"/>
         <emitter type="area">
@@ -97,13 +106,14 @@
     </shape>
 
     <shape type="obj" id="ball">
-        <string name="filename" value="meshes/cbox_smallbox.obj"/>
-        <!-- transform name="to_world">
-            <scale value="1"/>
-            <translate x="0.0" y="0.0" z="-1.5"/>
-            <rotate z="1" angle="10."/>
-            </transform -->    
-        <ref id="red"/>
+        <string name="filename" value="meshes/p1-Sphere.obj"/>
+        <transform name="to_world">
+            <scale value="0.01"/>
+            <!--  rotate z="1" angle="90."/ -->
+            <!-- translate x="4.0" y="0.0" z="-0.1"/ -->
+
+            </transform>
+        <ref id="gray"/>
     </shape>
 
     <shape type="obj" id="floor">
@@ -113,12 +123,12 @@
 
     <shape type="obj" id="ceiling">
         <string name="filename" value="meshes/cbox_ceiling.obj"/>
-        <ref id="mirror"/>
+        <ref id="black"/>
     </shape>
 
     <shape type="obj" id="back">
         <string name="filename" value="meshes/cbox_back.obj"/>
-        <ref id="mirror"/>
+        <ref id="purple"/>
     </shape>
 
     <shape type="obj" id="greenwall">
@@ -129,6 +139,14 @@
     <shape type="obj" id="redwall">
         <string name="filename" value="meshes/cbox_redwall.obj"/>
         <ref id="red"/>
+    </shape>
+
+    <shape type="sphere" id="glasssphere">
+        <transform name="to_world">
+            <scale value="0.25"/>
+            <translate x="0.5" y="-0.75" z="-0.2"/>
+        </transform>
+        <ref id="glass"/>
     </shape>
 
 </scene>
