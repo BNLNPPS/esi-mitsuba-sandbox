@@ -1,12 +1,5 @@
 # Notebooks for the Mitsuba study
 
-## Current Notebooks
-
-* _sandbox_: a close replica of the "hello world" notebooks found on the Mitsuba website, created for basic validation
-* _emitter_: experimentation with the placement and characteristics of the light sources
-
-The scene defiitions were created and are maintained in the XML code in the _scenes_ folder.
-
 ## General Notes
 
 Simple objects can be described directly in the XML format adopted for the Mitsuba
