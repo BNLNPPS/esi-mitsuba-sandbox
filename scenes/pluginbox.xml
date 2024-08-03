@@ -32,16 +32,8 @@
     </sensor>
 
     <!-- BSDFs -->
-    <bsdf type="diffuse" id="gray"><rgb name="reflectance" value="0.85, 0.85, 0.85"/></bsdf>
-    <bsdf type="diffuse" id="white"><rgb name="reflectance" value="0.885809, 0.698859, 0.666422"/></bsdf>
-    <bsdf type="diffuse" id="bright"><rgb name="reflectance" value="0.9999, 0.9999, 0.99"/></bsdf>
-    <bsdf type="diffuse" id="green"><rgb name="reflectance" value="0.105421, 0.37798, 0.076425"/></bsdf>
-    <bsdf type="diffuse" id="red"><rgb name="reflectance" value="0.70068, 0.0430135, 0.0443706"/></bsdf>
-    <bsdf type="diffuse" id="purple"><rgb name="reflectance" value="0.70068, 0.0430135, 0.7443706"/></bsdf>
-    <bsdf type="diffuse" id="black"><rgb name="reflectance" value="0.07, 0.04, 0.07"/></bsdf>
-    <bsdf type="conductor" id="mirror"><string name="material" value="Cr"/></bsdf>
-    <bsdf type="dielectric" id="glass"/>
-   
+   <include filename="colors.xml"/>
+   <bsdf type="mybsdf"/>
     <!-- Light -->
 
     <emitter type="spot" id="spot">
@@ -72,7 +64,7 @@
             <translate x="0.0" y="-0.3" z="-0.0"/>
             <rotate x="1" angle="-30."/>
             </transform>
-        <ref id="mybdsf"/>
+        <ref id="mybsdf"/>
     </shape>
 
 
