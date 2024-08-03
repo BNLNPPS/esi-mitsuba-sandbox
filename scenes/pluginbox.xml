@@ -33,7 +33,7 @@
 
     <!-- BSDFs -->
    <include filename="colors.xml"/>
-   <bsdf type="mybsdf"/>
+   <bsdf type="mybsdf" id="custom"/>
     <!-- Light -->
 
     <emitter type="spot" id="spot">
@@ -64,7 +64,7 @@
             <translate x="0.0" y="-0.3" z="-0.0"/>
             <rotate x="1" angle="-30."/>
             </transform>
-        <ref id="mybsdf"/>
+        <ref id="custom"/>
     </shape>
 
 
