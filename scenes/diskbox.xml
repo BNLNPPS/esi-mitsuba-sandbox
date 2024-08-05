@@ -45,7 +45,7 @@
         <transform name="to_world">
             <lookat origin="0., 0., 0.99" target="0., -0.4, -0.5" />
         </transform>
-        <rgb name="intensity" value="100., 100., 100."/>
+        <rgb name="intensity" value="20., 20., 20."/>
         <float name="cutoff_angle" value="8"/>
         <float name="beam_width" value="5"/>
         <!-- rgb name="cutoff_angle" value="0.0 0.0 0.0"/ -->
@@ -75,29 +75,6 @@
         <ref id="bright"/>
     </shape>
 
-    <shape type="obj" id="floor">
-        <string name="filename" value="meshes/cbox_floor.obj"/>
-        <ref id="mirror"/>
-    </shape>
-
-    <shape type="obj" id="ceiling">
-        <string name="filename" value="meshes/cbox_ceiling.obj"/>
-        <ref id="black"/>
-    </shape>
-
-    <shape type="obj" id="back">
-        <string name="filename" value="meshes/cbox_back.obj"/>
-        <ref id="black"/>
-    </shape>
-
-    <shape type="obj" id="greenwall">
-        <string name="filename" value="meshes/cbox_greenwall.obj"/>
-        <ref id="green"/>
-    </shape>
-
-    <shape type="obj" id="redwall">
-        <string name="filename" value="meshes/cbox_redwall.obj"/>
-        <ref id="red"/>
-    </shape>
+    <include filename="walls_standard.xml"/>
 
 </scene>

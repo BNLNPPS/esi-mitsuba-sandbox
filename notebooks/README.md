@@ -21,3 +21,8 @@ be produced by external applications.
 In the [Geant4/Cherenkov paper](https://arxiv.org/pdf/2309.12496) the light source was formed based on a custom model and
 not the _spot_ type of emitter in Mitsuba.
 
+## Includes
+
+There is an "include" tag which allows to include XML description of scenes in
+top-level XML files. One example is in the _../scenes/colors.xml_ file, which contains
+some color definitions commong across a few notebooks.
