@@ -1,6 +1,6 @@
 <scene version="3.0.0">
     <default name="spp" value="128"/>
-    <default name="res" value="256"/>
+    <default name="res" value="512"/>
     <default name="max_depth" value="6"/>
     <default name="integrator" value="path"/>
     <default name="shift" value="-0.3"/>
@@ -19,7 +19,7 @@
         <float name="fov" value="39.3077"/>
         <transform name="to_world">
             <lookat origin="0,  0,  4.0"
-                    target="0,  0,  0"
+                    target="0,  -0.1,  0"
                     up    ="0,  1,  0"/>
         </transform>
         <sampler type="independent">
@@ -43,11 +43,11 @@
 
     <emitter type="spot" id="spot">
         <transform name="to_world">
-            <lookat origin="0., 0., 0.99" target="0., 0., -0.1" />
+            <lookat origin="0., 0., 0.99" target="0., -0.4, -0.5" />
         </transform>
         <rgb name="intensity" value="100., 100., 100."/>
-        <float name="cutoff_angle" value="9"/>
-        <float name="beam_width" value="7"/>
+        <float name="cutoff_angle" value="8"/>
+        <float name="beam_width" value="5"/>
         <!-- rgb name="cutoff_angle" value="0.0 0.0 0.0"/ -->
     </emitter>
 
@@ -67,10 +67,10 @@
 
     <shape type="disk" id="disk">
         <transform name="to_world">
-            <scale value="0.6"/>
+            <scale value="0.25"/>
             <rotate x="1" angle="50."/>
             <rotate y="1" angle="0"/>
-            <translate x="0." y="0.0" z="-0.7"/>
+            <translate x="0." y="-0.5" z="-0.8"/>
         </transform>
         <ref id="bright"/>
     </shape>
