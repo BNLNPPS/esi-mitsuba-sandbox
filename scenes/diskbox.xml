@@ -4,7 +4,7 @@
     <default name="max_depth" value="6"/>
     <default name="integrator" value="path"/>
     <default name="shift" value="-0.3"/>
-    <default name="angle" value="-45.0"/>
+    <default name="angle" value="-60.0"/>
     <integrator type='$integrator'>
         <integer name="max_depth" value="$max_depth"/>
     </integrator>
@@ -43,11 +43,11 @@
 
     <emitter type="spot" id="spot">
         <transform name="to_world">
-            <lookat origin="0., 0., 0.99" target="0., 0., 0." />
+            <lookat origin="0., 0., 0.99" target="0., 0., -0.1" />
         </transform>
-        <rgb name="intensity" value="10.1, 10.1, 10.1"/>
-        <float name="cutoff_angle" value="10"/>
-        <float name="beam_width" value="1"/>
+        <rgb name="intensity" value="100., 100., 100."/>
+        <float name="cutoff_angle" value="9"/>
+        <float name="beam_width" value="7"/>
         <!-- rgb name="cutoff_angle" value="0.0 0.0 0.0"/ -->
     </emitter>
 
@@ -61,23 +61,23 @@
         </transform>
         <ref id="white"/>
         <emitter type="area">
-            <rgb name="radiance" value="2.387, 1.9873, 1.7"/>
+            <rgb name="radiance" value="1., 1., 1."/>
         </emitter>
     </shape>
 
     <shape type="disk" id="disk">
         <transform name="to_world">
-            <scale value="0.7"/>
-            <rotate x="1" angle="45."/>
+            <scale value="0.6"/>
+            <rotate x="1" angle="50."/>
             <rotate y="1" angle="0"/>
-            <translate x="0." y="0.0" z="-0.3"/>
+            <translate x="0." y="0.0" z="-0.7"/>
         </transform>
         <ref id="bright"/>
     </shape>
 
     <shape type="obj" id="floor">
         <string name="filename" value="meshes/cbox_floor.obj"/>
-        <ref id="gray"/>
+        <ref id="mirror"/>
     </shape>
 
     <shape type="obj" id="ceiling">
