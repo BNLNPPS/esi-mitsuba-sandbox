@@ -1,0 +1,80 @@
+<scene version="3.0.0">
+    <default name="spp" value="128"/>
+    <default name="res" value="512"/>
+    <default name="max_depth" value="6"/>
+    <default name="integrator" value="path"/>
+    <default name="shift" value="-0.3"/>
+    <default name="angle" value="-60.0"/>
+    <integrator type='$integrator'>
+        <integer name="max_depth" value="$max_depth"/>
+    </integrator>
+
+
+    <!-- sensor type="perspective" id="sensor" -->
+    <sensor type="perspective" id="sensor">
+        <string name="fov_axis" value="smaller"/>
+        <float name="near_clip" value="0.001"/>
+        <float name="far_clip" value="100.0"/>
+        <float name="focus_distance" value="1000"/>
+        <float name="fov" value="39.3077"/>
+        <transform name="to_world">
+            <lookat origin="0,  0,  4.0"
+                    target="0,  -0.1,  0"
+                    up    ="0,  1,  0"/>
+        </transform>
+        <sampler type="independent">
+            <integer name="sample_count" value="$spp"/>
+        </sampler>
+        <film type="hdrfilm">
+            <integer name="width"  value="$res"/>
+            <integer name="height" value="$res"/>
+            <rfilter type="tent"/>
+            <string name="pixel_format" value="rgb"/>
+            <string name="component_format" value="float32"/>
+        </film>
+    </sensor>
+
+    <!-- BSDFs -->
+
+    <include filename="colors.xml"/>
+
+   
+    <!-- Light -->
+
+    <emitter type="spot" id="spot">
+        <transform name="to_world">
+            <lookat origin="-0.5, 0., 0.5" target="0., -0.4, -0.5" />
+        </transform>
+        <rgb name="intensity" value="20., 20., 20."/>
+        <float name="cutoff_angle" value="8"/>
+        <float name="beam_width" value="5"/>
+        <!-- rgb name="cutoff_angle" value="0.0 0.0 0.0"/ -->
+    </emitter>
+
+
+    <!-- Shapes -->
+
+    <shape type="obj" id="light">
+        <string name="filename" value="meshes/cbox_luminaire.obj"/>
+        <transform name="to_world">
+            <translate x="0.0" y="0.0" z="0.0"/>
+        </transform>
+        <ref id="white"/>
+        <emitter type="area">
+            <rgb name="radiance" value="1., 1., 1."/>
+        </emitter>
+    </shape>
+
+    <shape type="disk" id="disk">
+        <transform name="to_world">
+            <scale value="0.25"/>
+            <rotate x="1" angle="50."/>
+            <rotate y="1" angle="0"/>
+            <translate x="0." y="-0.5" z="-0.8"/>
+        </transform>
+        <ref id="mirror"/>
+    </shape>
+
+    <include filename="walls_mirror_floor.xml"/>
+
+</scene>
