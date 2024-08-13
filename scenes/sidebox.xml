@@ -19,7 +19,7 @@
 
         <transform name="to_world">
             <lookat origin="0,  0,  4.0"
-                    target="0,  -0.1,  0"
+                    target="0,  -0.,  0"
                     up    ="0,  1,  0"/>
         </transform>
 
@@ -44,7 +44,7 @@
 
     <emitter type="spot" id="spot">
         <transform name="to_world">
-            <lookat origin="-0.9, 0., 0.0" target="0.9, 0., 0." />
+            <lookat origin="-0.9, 0.5, 0.0" target="0.9, 0.5, 0." />
         </transform>
         <rgb name="intensity" value="150., 150., 150."/>
         <float name="cutoff_angle" value="40"/>
@@ -62,21 +62,32 @@
         </transform>
         <ref id="white"/>
         <emitter type="area">
-            <rgb name="radiance" value="1., 1., 1."/>
+            <rgb name="radiance" value="10., 10., 10."/>
         </emitter>
     </shape>
 
-    <shape type="disk" id="disk">
+    <shape type="disk" id="upper disk">
         <transform name="to_world">
             <scale value="0.15"/>
             <rotate y="1" angle="-90."/>
             <rotate z="1" angle="45."/>
 
-            <translate x="0." y="-0." z="0."/>
+            <translate x="0." y="0.5" z="0."/>
         </transform>
         <ref id="bright"/>
     </shape>
 
-    <include filename="walls_mirror_floor.xml"/>
+    <shape type="disk" id="lower disk">
+        <transform name="to_world">
+            <scale value="0.15"/>
+            <rotate y="1" angle="90."/>
+            <rotate z="1" angle="45."/>
+
+            <translate x="0." y="0." z="0."/>
+        </transform>
+        <ref id="bright"/>
+    </shape>
+
+    <include filename="walls_standard.xml"/>
 
 </scene>
