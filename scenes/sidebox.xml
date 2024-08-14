@@ -46,9 +46,9 @@
         <transform name="to_world">
             <lookat origin="-0.9, 0.5, 0.0" target="0.9, 0.5, 0." />
         </transform>
-        <rgb name="intensity" value="150., 150., 150."/>
-        <float name="cutoff_angle" value="40"/>
-        <float name="beam_width" value="5"/>
+        <rgb name="intensity" value="1500., 150., 150."/>
+        <float name="cutoff_angle" value="3"/>
+        <float name="beam_width" value="1"/>
         <!-- rgb name="cutoff_angle" value="0.0 0.0 0.0"/ -->
     </emitter>
 
@@ -62,7 +62,7 @@
         </transform>
         <ref id="white"/>
         <emitter type="area">
-            <rgb name="radiance" value="10., 10., 10."/>
+            <rgb name="radiance" value="1., 1., 1."/>
         </emitter>
     </shape>
 
@@ -79,13 +79,13 @@
 
     <shape type="disk" id="lower disk">
         <transform name="to_world">
-            <scale value="0.15"/>
+            <scale value="0.25"/>
             <rotate y="1" angle="90."/>
             <rotate z="1" angle="45."/>
 
-            <translate x="0." y="0." z="0."/>
+            <translate x="0." y="-0.4" z="0."/>
         </transform>
-        <ref id="bright"/>
+        <ref id="mirror"/>
     </shape>
 
     <include filename="walls_standard.xml"/>
