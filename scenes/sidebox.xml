@@ -46,9 +46,9 @@
         <transform name="to_world">
             <lookat origin="-0.9, 0.5, 0.0" target="0.9, 0.5, 0." />
         </transform>
-        <rgb name="intensity" value="1500., 150., 150."/>
-        <float name="cutoff_angle" value="3"/>
-        <float name="beam_width" value="1"/>
+        <rgb name="intensity" value="1500., 1500., 1500."/>
+        <float name="cutoff_angle" value="4"/>
+        <float name="beam_width" value="3"/>
         <!-- rgb name="cutoff_angle" value="0.0 0.0 0.0"/ -->
     </emitter>
 
@@ -87,6 +87,15 @@
         </transform>
         <ref id="mirror"/>
     </shape>
+
+    <!-- shape type="sphere" id="sphere">
+        <transform name="to_world">
+            <scale value="0.001"/>
+            <translate x="-0.87" y="0.5" z="0."/>
+        </transform>
+        <ref id="purple"/>
+    </shape -->
+
 
     <include filename="walls_standard.xml"/>
 
