@@ -44,14 +44,22 @@
    
     <!-- Light -->
 
-    <emitter type="spot" id="spot">
+    <emitter type="spot" id="spot1">
         <transform name="to_world">
-            <lookat origin="0., 0., 0.5" target="0., 0., -0.5" />
+            <lookat origin="-0.1, 0., 0.5" target="0., 0., -0.5" />
         </transform>
         <rgb name="intensity" value="19.0, 10.0, 11.0"/>
         <float name="cutoff_angle" value="10"/>
         <float name="beam_width" value="5"/>
-        <!-- rgb name="cutoff_angle" value="0.0 0.0 0.0"/ -->
+    </emitter>
+
+    <emitter type="spot" id="spot2">
+        <transform name="to_world">
+            <lookat origin="0.0, 0.2, 0.0" target="0., 0., -0.8" />
+        </transform>
+        <rgb name="intensity" value="19.0, 10.0, 11.0"/>
+        <float name="cutoff_angle" value="10"/>
+        <float name="beam_width" value="5"/>
     </emitter>
 
     <!-- Shapes -->
