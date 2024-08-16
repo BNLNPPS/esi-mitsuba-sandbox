@@ -71,9 +71,9 @@
         <!-- string name="filename" value="meshes/CutShell-1.obj"/ -->
         <transform name="to_world">
             <scale value="0.02"/>
-            <translate x="0.0" y="-0.35" z="-0.0"/>
-            <rotate x="1" angle="-30."/>
-            <rotate z="1" angle="30."/>
+            <translate x="0.0" y="-0.37" z="-0.1"/>
+            <rotate x="1" angle="-40."/>
+            <rotate z="1" angle="20."/>
             </transform>
         <ref id="mirror"/>
     </shape>
