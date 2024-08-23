@@ -36,7 +36,7 @@
 
     <!-- BSDFs -->
 
-    <include filename="colors.xml"/>
+    <include filename="../aux/colors.xml"/>
 
    
     <!-- Light -->
@@ -55,7 +55,7 @@
     <!-- Shapes -->
 
     <shape type="obj" id="light">
-        <string name="filename" value="meshes/cbox_luminaire.obj"/>
+        <string name="filename" value="../meshes/cbox_luminaire.obj"/>
         <transform name="to_world">
             <translate x="0.0" y="0.0" z="0.0"/>
         </transform>
@@ -75,6 +75,6 @@
         <ref id="bright"/>
     </shape>
 
-    <include filename="walls_standard.xml"/>
+    <include filename="../aux/walls_standard.xml"/>
 
 </scene>
