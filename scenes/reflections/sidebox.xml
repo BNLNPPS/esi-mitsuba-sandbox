@@ -97,6 +97,6 @@
     </shape>
 
 
-    <include filename="../aux/walls_standard.xml"/>
+    <include filename="../aux/walls_black_back.xml"/>
 
 </scene>
